@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Spellcaster</title>
+</head>
+<body>
+	<div id="editDiv">
+		<p>
+			<b>Card name</b><br>
+			<input type="text" size="40" id="name">
+		</p>
+		<p>
+			<b>Link to image</b><br>
+			<input type="text" size="40" id="img">
+		</p>
+		<p>
+			<b>Properties</b><br>
+			<ul id="prop_list"></ul>
+			<input type="button" value="Add property" id="prop_bt">
+		</p>
+		<p>
+			<b>Triggers</b><br>
+			<ul id="trig_list"></ul>
+			<input type="button" value="Add trigger" id="trig_bt">
+		</p>
+		<p>
+			<b>Actions</b><br>
+			<ul id="act_list"></ul>
+			<datalist id="acts">
+				<option>Life change</option>
+				<option>Draw/discard</option>
+				<!-- --><option>Add property</option>
+				<option>Add trigger</option>
+				<option>Add action</option> <!-- -->
+				<option>Activate</option>
+			</datalist>
+			<datalist id="pars">
+				<option>Combo action</option>
+				<option>Combo cards</option>
+				<option>Combo triggers</option>
+			</datalist>
+			<input type="button" value="Add action" id="act_bt">
+		</p>
+		<datalist id="props">
+			<option>Spell ender</option>
+		</datalist>
+		<datalist id="trigs">
+			<option>Other trigger</option>
+			<option>Card added</option>
+			<option>Card cast</option>
+			<option>Cast ended</option>
+			<option>Property added</option>
+			<option>Trigger added</option>
+			<option>Action added</option>
+			<option>After draw</option>
+			<option>After discard</option>
+			<option>Card drawn</option>
+			<option>Card discarded</option>
+			<option>Turn started</option>
+			<option>Turn ended</option>
+			<option>Life changed</option>
+		</datalist>
+		<datalist id="types">
+			<option>Sign</option>
+			<option>Trigger</option>
+			<option>Card</option>
+			<option>Card in hand</option>
+			<option>Card name</option>
+			<option>Queue</option>
+			<option>Player</option>
+		</datalist>
+		<datalist id="targs">
+			<option>All targets</option>
+			<option>+</option>
+			<option>-</option>
+			<option>Owner</option>
+			<option>Opponent</option>
+		</datalist>
+		<p>
+			<b>Flavor text</b><br>
+			<textarea id="flav" cols="40" rows="3"></textarea>
+		</p>
+		<p>
+			<input type="button" value="Add to list" id="lst_bt">
+			<input type="button" value="Load table" id="tbl_bt">
+		</p>
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/papaparse.min.js"></script>
+	<script src="./js/main.js"></script>
+</body>
