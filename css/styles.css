@@ -1,0 +1,56 @@
+body {
+	/* */
+	display: flex;
+	justify-content: center;
+}
+
+#editDiv {
+	display: inline-block;
+}
+
+.big {
+	margin: 20px 0 20px 0;
+}
+
+.text {
+	margin: 10px 0 10px 0;
+}
+
+ul {
+	/* */
+	margin: 0 0 0 0;
+}
+
+li {
+	/* */
+}
+
+b {
+	/* */
+}
+
+i {
+	/* */
+}
+
+[type="text"] {
+	/* */
+}
+
+[list] {
+	/* */
+}
+
+[type="button"] {
+	/* */
+}
+
+textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+#bot_buttons {
+	display: flex;
+	justify-content: center;
+}

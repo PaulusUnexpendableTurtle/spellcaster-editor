@@ -27,12 +27,15 @@ $(function(){
 	});
 
 	function triggerDOMstring(yourID) {
-		return `<b>Trigger type</b><br>
-			<input list="trigs" id="trig${yourID}_txt"><br>
-			<b>Target type</b><br>
-			<input list="types" id="trig${yourID}_typ"><br>
-			<b>Default target (if not default, leave blank)</b><br>
-			<input list="targs" id="trig${yourID}_tar"><br>`;
+		return `<div class="text"><b>Trigger type</b></div>
+			<input list="trigs" id="trig${yourID}_txt">
+			<div class="text"><b>Target type</b></div>
+			<input list="types" id="trig${yourID}_typ">
+			<div class="text">
+				<b>Target</b><br>
+				<i>If not default, leave blank</i>
+			</div>
+			<input list="targs" id="trig${yourID}_tar">`;
 	}
 
 	var actID = 0, actIDs = [];
@@ -53,12 +56,20 @@ $(function(){
 	});
 
 	function actionDOMstring(yourID) {
-		return `<b>Action type</b><br>
-			<input list="acts" id="act${yourID}_txt"><br>
-			<b>Default target (if not default, leave blank)</b><br>
-			<input list="targs" id="act${yourID}_tar"><br>
-			<div id="cut${yourID}"><b>Parameter (if not needed, leave blank)</b><br>
-			<input list="pars" class="parameter" id="act${yourID}_par"><input type="button" value="..." id="act${yourID}_ext"><br></div>`;
+		return `<div class="text"><b>Action type</b></div>
+			<input list="acts" id="act${yourID}_txt">
+			<div class="text">
+				<b>Target</b><br>
+				<i>If not default, leave blank</i>
+			</div>
+			<input list="targs" id="act${yourID}_tar">
+			<div id="cut${yourID}">
+				<div class="text">
+					<b>Parameter</b><br>
+					<i>If not needed, leave blank</i>
+				</div>
+				<input list="pars" id="act${yourID}_par"><input type="button" value="..." id="act${yourID}_ext">
+			</div>`;
 	}
 
 	function expandClick(origID, id) {
@@ -66,7 +77,7 @@ $(function(){
 			let newID = id + '_1';
 			switch($(`#act${id}_txt`).val()) {
 				case 'Add property':
-					$(`#inn${origID}`).append(`<b>Property</b><br><input list="props" id="prop${newID}_txt">`);
+					$(`#inn${origID}`).append(`<div class="text"><b>Property</b></div><input list="props" id="prop${newID}_txt">`);
 					$(`#cut${id}`).remove();
 					break;
 				case 'Add trigger':
@@ -85,7 +96,6 @@ $(function(){
 	var list = [];
 
 	$('#lst_bt').click(function() {
-		//TODO: highlight button
 		list.push({
 			name: $('#name').val(),
 			img: $('#img').val(),
@@ -94,9 +104,7 @@ $(function(){
 			triggers: getTriggers(),
 			actions: getActions()
 		});
-		setTimeout(function() {
-			//TODO: unhighlight button
-		}, 500);
+		alert('Card pushed to list');
 	});
 
 	var property = [];
@@ -172,8 +180,18 @@ $(function(){
 		}
 	};
 
-	$('#tbl_bt').click(function() {
-		let file = new Blob([Papa.unparse(list, { delimiter: ';' })], {type: 'text/plain'});
+	var file;
+
+	$('#tbl_pr').click(function() {
+		file = new Blob([Papa.unparse(list, { delimiter: ';' })], {type: 'text/plain'});
+		alert('Table is ready');
+	});
+
+	$('#tbl_s').click(function() {
+		if (!file) {
+			alert('Table is not ready');
+			return;
+		}
 	    if (window.navigator.msSaveOrOpenBlob) // IE10+
 	        window.navigator.msSaveOrOpenBlob(file, 'cards.csv');
 	    else { // Others
@@ -187,6 +205,7 @@ $(function(){
 	        setTimeout(function() {
 	            document.body.removeChild(a);
 	            window.URL.revokeObjectURL(url);
+	            file = undefined;
 	        }, 0);
 	    }
 	});

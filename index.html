@@ -1,36 +1,38 @@
 <!DOCTYPE HTML>
 <head>
+	<meta charset="utf-8">
 	<title>Spellcaster</title>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
 	<div id="editDiv">
-		<p>
-			<b>Card name</b><br>
+		<div class="big">
+			<div class="text"><b>Card name</b></div>
 			<input type="text" size="40" id="name">
-		</p>
-		<p>
-			<b>Link to image</b><br>
+		</div>
+		<div class="big">
+			<div class="text"><b>Link to image</b></div>
 			<input type="text" size="40" id="img">
-		</p>
-		<p>
-			<b>Properties</b><br>
+		</div>
+		<div class="big">
+			<div class="text"><b>Properties</b></div>
 			<ul id="prop_list"></ul>
 			<input type="button" value="Add property" id="prop_bt">
-		</p>
-		<p>
-			<b>Triggers</b><br>
+		</div>
+		<div class="big">
+			<div class="text"><b>Triggers</b></div>
 			<ul id="trig_list"></ul>
 			<input type="button" value="Add trigger" id="trig_bt">
-		</p>
-		<p>
-			<b>Actions</b><br>
+		</div>
+		<div class="big">
+			<div class="text"><b>Actions</b></div>
 			<ul id="act_list"></ul>
 			<datalist id="acts">
 				<option>Life change</option>
 				<option>Draw/discard</option>
-				<!-- --><option>Add property</option>
+				<option>Add property</option>
 				<option>Add trigger</option>
-				<option>Add action</option> <!-- -->
+				<option>Add action</option>
 				<option>Activate</option>
 			</datalist>
 			<datalist id="pars">
@@ -39,7 +41,7 @@
 				<option>Combo triggers</option>
 			</datalist>
 			<input type="button" value="Add action" id="act_bt">
-		</p>
+		</div>
 		<datalist id="props">
 			<option>Spell ender</option>
 		</datalist>
@@ -75,16 +77,17 @@
 			<option>Owner</option>
 			<option>Opponent</option>
 		</datalist>
-		<p>
-			<b>Flavor text</b><br>
+		<div class="big">
+			<div class="text"><b>Flavor text</b></div>
 			<textarea id="flav" cols="40" rows="3"></textarea>
-		</p>
-		<p>
+		</div>
+		<div id="bot_buttons" class="big">
 			<input type="button" value="Add to list" id="lst_bt">
-			<input type="button" value="Load table" id="tbl_bt">
-		</p>
+			<input type="button" value="Prepare table" id="tbl_pr">
+			<input type="button" value="Save table" id="tbl_s">
+		</div>
 	</div>
-	<script src="./js/jquery.min.js"></script>
-	<script src="./js/papaparse.min.js"></script>
-	<script src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/papaparse.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
 </body>
