@@ -3,9 +3,9 @@ $(function(){
 	$('#prop_bt').click(function() {
 		let yourID = propID++;
 		$('#prop_list').append(`
-			<li id="prop${yourID}">
-				<input list="props"><input type="button" value="delete" id="prop${yourID}_bt">
-			</li>
+			<li id="prop${yourID}"><div>
+				<input list="props"><input type="button" value="delete" id="prop${yourID}_bt" class="inline">
+			</div></li>
 		`);
 		$(`#prop${yourID}_bt`).click(function() {
 			$(`#prop${yourID}`).remove();
@@ -18,7 +18,9 @@ $(function(){
 		$('#trig_list').append(`
 			<li id="trig${yourID}">
 				${triggerDOMstring(yourID)}
-				<input type="button" value="delete" id="trig${yourID}_bt">
+				<div class="delete_wrapper">
+					<input type="button" value="delete" id="trig${yourID}_bt" class="little">
+				</div>
 			</li>
 		`);
 		$(`#trig${yourID}_bt`).click(function() {
@@ -27,15 +29,15 @@ $(function(){
 	});
 
 	function triggerDOMstring(yourID) {
-		return `<div class="text"><b>Trigger type</b></div>
-			<input list="trigs" id="trig${yourID}_txt">
-			<div class="text"><b>Target type</b></div>
-			<input list="types" id="trig${yourID}_typ">
-			<div class="text">
+		return `<div class="text inline"><b>Trigger type</b></div>
+			<input list="trigs" id="trig${yourID}_txt" class="inline">
+			<div class="text inline"><b>Target type</b></div>
+			<input list="types" id="trig${yourID}_typ" class="inline">
+			<div class="text inline">
 				<b>Target</b><br>
 				<i>If not default, leave blank</i>
 			</div>
-			<input list="targs" id="trig${yourID}_tar">`;
+			<input list="targs" id="trig${yourID}_tar" class="inline">`;
 	}
 
 	var actID = 0, actIDs = [];
@@ -44,8 +46,12 @@ $(function(){
 		actIDs.push(yourID);
 		$('#act_list').append(`
 			<li id="act${yourID}">
-				<div id="inn${yourID}">${actionDOMstring(yourID)}</div>
-				<input type="button" value="delete" id="act${yourID}_bt">
+				<div id="inn${yourID}">
+					${actionDOMstring(yourID)}
+				</div>
+				<div class="delete_wrapper">
+					<input type="button" value="delete" id="act${yourID}_bt" class="little">
+				</div>
 			</li>
 		`);
 		$(`#act${yourID}_bt`).click(function() {
@@ -56,19 +62,19 @@ $(function(){
 	});
 
 	function actionDOMstring(yourID) {
-		return `<div class="text"><b>Action type</b></div>
-			<input list="acts" id="act${yourID}_txt">
-			<div class="text">
+		return `<div class="text inline"><b>Action type</b></div>
+			<input list="acts" id="act${yourID}_txt" class="inline">
+			<div class="text inline">
 				<b>Target</b><br>
 				<i>If not default, leave blank</i>
 			</div>
-			<input list="targs" id="act${yourID}_tar">
+			<input list="targs" id="act${yourID}_tar" class="inline">
 			<div id="cut${yourID}">
-				<div class="text">
+				<div class="text inline">
 					<b>Parameter</b><br>
 					<i>If not needed, leave blank</i>
 				</div>
-				<input list="pars" id="act${yourID}_par"><input type="button" value="..." id="act${yourID}_ext">
+				<input list="pars" id="act${yourID}_par" class="inline"><input type="button" value="..." id="act${yourID}_ext" class="inline">
 			</div>`;
 	}
 
@@ -77,7 +83,7 @@ $(function(){
 			let newID = id + '_1';
 			switch($(`#act${id}_txt`).val()) {
 				case 'Add property':
-					$(`#inn${origID}`).append(`<div class="text"><b>Property</b></div><input list="props" id="prop${newID}_txt">`);
+					$(`#inn${origID}`).append(`<div class="text inline"><b>Property</b></div><input list="props" id="prop${newID}_txt" class="inline">`);
 					$(`#cut${id}`).remove();
 					break;
 				case 'Add trigger':
