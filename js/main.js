@@ -4,7 +4,7 @@ $(function(){
 		let yourID = propID++;
 		$('#prop_list').append(`
 			<li id="prop${yourID}"><div>
-				<input list="props"><input type="button" value="delete" id="prop${yourID}_bt" class="inline">
+				<input list="props"><input type="button" value="DELETE" id="prop${yourID}_bt" class="inline">
 			</div></li>
 		`);
 		$(`#prop${yourID}_bt`).click(function() {
@@ -19,7 +19,7 @@ $(function(){
 			<li id="trig${yourID}">
 				${triggerDOMstring(yourID)}
 				<div class="delete_wrapper">
-					<input type="button" value="delete" id="trig${yourID}_bt" class="little">
+					<input type="button" value="DELETE" id="trig${yourID}_bt" class="little">
 				</div>
 			</li>
 		`);
@@ -50,7 +50,7 @@ $(function(){
 					${actionDOMstring(yourID)}
 				</div>
 				<div class="delete_wrapper">
-					<input type="button" value="delete" id="act${yourID}_bt" class="little">
+					<input type="button" value="DELETE" id="act${yourID}_bt" class="little">
 				</div>
 			</li>
 		`);
@@ -63,18 +63,21 @@ $(function(){
 
 	function actionDOMstring(yourID) {
 		return `<div class="text inline"><b>Action type</b></div>
-			<input list="acts" id="act${yourID}_txt" class="inline">
+			<input list="acts" id="act${yourID}_txt" class="inline line">
 			<div class="text inline">
 				<b>Target</b><br>
 				<i>If not default, leave blank</i>
 			</div>
-			<input list="targs" id="act${yourID}_tar" class="inline">
+			<input list="targs" id="act${yourID}_tar" class="inline line">
 			<div id="cut${yourID}">
 				<div class="text inline">
 					<b>Parameter</b><br>
 					<i>If not needed, leave blank</i>
 				</div>
-				<input list="pars" id="act${yourID}_par" class="inline"><input type="button" value="..." id="act${yourID}_ext" class="inline">
+				<div class="line">
+					<input list="pars" id="act${yourID}_par" class="inline">
+					<input type="button" value="..." id="act${yourID}_ext" class="inline">
+				</div>
 			</div>`;
 	}
 

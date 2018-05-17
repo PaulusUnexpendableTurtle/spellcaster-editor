@@ -7,25 +7,25 @@
 <body>
 	<div id="editDiv">
 		<div class="big">
-			<div class="text"><b>Card name</b></div>
+			<div class="header"><b>Card name</b></div>
 			<input type="text" size="40" id="name">
 		</div>
 		<div class="big">
-			<div class="text"><b>Link to image</b></div>
+			<div class="header"><b>Link to image</b></div>
 			<input type="text" size="40" id="img">
 		</div>
 		<div class="big">
-			<div class="text"><b>Properties</b></div>
+			<div class="header"><b>Properties</b></div>
 			<ul id="prop_list"></ul>
-			<input type="button" value="Add property" id="prop_bt" class="medium">
+			<input type="button" value="+" id="prop_bt" class="medium plus">
 		</div>
 		<div class="big">
-			<div class="text"><b>Triggers</b></div>
+			<div class="header"><b>Triggers</b></div>
 			<ul id="trig_list"></ul>
-			<input type="button" value="Add trigger" id="trig_bt" class="medium">
+			<input type="button" value="+" id="trig_bt" class="medium plus">
 		</div>
 		<div class="big">
-			<div class="text"><b>Actions</b></div>
+			<div class="header"><b>Actions</b></div>
 			<ul id="act_list"></ul>
 			<datalist id="acts">
 				<option>Life change</option>
@@ -40,7 +40,7 @@
 				<option>Combo cards</option>
 				<option>Combo triggers</option>
 			</datalist>
-			<input type="button" value="Add action" id="act_bt" class="medium">
+			<input type="button" value="+" id="act_bt" class="medium plus">
 		</div>
 		<datalist id="props">
 			<option>Spell ender</option>
@@ -78,7 +78,7 @@
 			<option>Opponent</option>
 		</datalist>
 		<div class="big">
-			<div class="text"><b>Flavor text</b></div>
+			<div class="header"><b>Flavor text</b></div>
 			<textarea id="flav" cols="30" rows="3"></textarea>
 		</div>
 		<div id="bot_buttons" class="big">

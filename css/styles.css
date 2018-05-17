@@ -1,54 +1,83 @@
+@font-face {
+	font-family: open-sans-semibold;
+	src: url(./fonts/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+	font-family: open-sans-regular;
+	src: url(./fonts/OpenSans-Regular.ttf);
+}
+
 * {
 	color: white;
-	font-size: 15pt;
 }
 
 body {
 	background-color: black;
 	display: flex;
 	justify-content: center;
+	margin: 0;
 }
 
 #editDiv {
 	background-color: #2F2F2F;
-	border-style: hidden outset hidden outset;
+	border-style: hidden outset;
 	border-color: #727272;
 	display: inline-block;
-	padding: 0 10px 0 10px;
+	padding: 0 10px;
+}
+
+#name, #img {
+	width: 100%;
 }
 
 .big {
-	margin: 20px 0 20px 0;
+	margin: 20px 0;
+}
+
+.header {
+	font: 19px open-sans-semibold;
+	margin: 10px 0;
 }
 
 .text {
-	margin: 10px 0 10px 0;
+	font: 14px open-sans-regular;
 }
 
 ul {
-	margin: 0 0 0 0;
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
 li {
+	box-sizing: border-box;
 	border-style: outset;
 	border-color: #727272;
-	width: max-content;
-	margin: 10px 0 10px 0;
+	width: 100%;
+	margin: 10px 0;
+	padding: 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: left;
 }
 
 [type="text"], [list], textarea {
+	font: 14px open-sans-semibold;
 	background-color: #232323;
 }
 
 [type="button"] {
-	background-color: #727272;
+	font: 16px open-sans-semibold;
+	background-color: #656565;
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
 	display: inline-block;
-	padding: 5px 5px 5px 5px;
+	padding: 0px 5px;
 }
 
 .delete_wrapper {
@@ -57,16 +86,34 @@ li {
 }
 
 .inline {
-	margin: 5px 5px 5px 5px;
-	padding: 1px 3px 1px 3px;
+	/* margin: 5px; */
+	padding: 1px 3px;
+}
+
+/*
+.line {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	width: 90%;
+}
+*/
+
+.inline[type="button"] {
+	margin: 5px 0 5px 5px;
 }
 
 .medium {
-	margin: 10px 5px 10px 5px;
+	margin: 10px 5px;
+}
+
+.plus {
+	font: 20px open-sans-semibold;
+	padding: 5px 11px;
 }
 
 .little {
-	margin: 5px 5px 5px 5px;
+	margin: 5px;
 }
 
 textarea {
@@ -83,5 +130,6 @@ textarea {
 }
 
 .bottom {
-	margin: 10px 10px 10px 10px;
+	margin: 10px;
+	padding: 10px;
 }
