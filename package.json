@@ -1,0 +1,22 @@
+{
+  "name": "spellcaster_editor",
+  "version": "1.0.0",
+  "description": "editor of cards for spellcaster game of my own",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulusUnexpendableTurtle/spellcaster-editor.git"
+  },
+  "author": "PaulusUnexpendableTurtle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulusUnexpendableTurtle/spellcaster-editor/issues"
+  },
+  "homepage": "https://github.com/PaulusUnexpendableTurtle/spellcaster-editor#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

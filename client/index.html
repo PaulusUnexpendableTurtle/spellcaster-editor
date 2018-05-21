@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<head>
+	<meta charset="utf-8">
+	<title>Spellcaster</title>
+	<link rel="stylesheet" type="text/css" href="./client/css/styles.css">
+</head>
+<body>
+	<div id="editDiv">
+		<div class="big">
+			<div class="header"><b>Card name</b></div>
+			<input type="text" size="40" id="name">
+		</div>
+		<div class="big">
+			<div class="header"><b>Link to image</b></div>
+			<input type="text" size="40" id="img">
+		</div>
+		<div class="big">
+			<div class="header"><b>Properties</b></div>
+			<ul id="prop_list"></ul>
+			<input type="button" value="+" id="prop_bt" class="medium plus">
+		</div>
+		<div class="big">
+			<div class="header"><b>Triggers</b></div>
+			<ul id="trig_list"></ul>
+			<input type="button" value="+" id="trig_bt" class="medium plus">
+		</div>
+		<div class="big">
+			<div class="header"><b>Actions</b></div>
+			<ul id="act_list"></ul>
+			<datalist id="acts">
+				<option>Life change</option>
+				<option>Draw/discard</option>
+				<option>Add property</option>
+				<option>Add trigger</option>
+				<option>Add action</option>
+				<option>Activate</option>
+			</datalist>
+			<datalist id="pars">
+				<option>Combo action</option>
+				<option>Combo cards</option>
+				<option>Combo triggers</option>
+			</datalist>
+			<input type="button" value="+" id="act_bt" class="medium plus">
+		</div>
+		<datalist id="props">
+			<option>Spell ender</option>
+		</datalist>
+		<datalist id="trigs">
+			<option>Other trigger</option>
+			<option>Card added</option>
+			<option>Card cast</option>
+			<option>Cast ended</option>
+			<option>Property added</option>
+			<option>Trigger added</option>
+			<option>Action added</option>
+			<option>After draw</option>
+			<option>After discard</option>
+			<option>Card drawn</option>
+			<option>Card discarded</option>
+			<option>Turn started</option>
+			<option>Turn ended</option>
+			<option>Life changed</option>
+		</datalist>
+		<datalist id="types">
+			<option>Sign</option>
+			<option>Trigger</option>
+			<option>Card</option>
+			<option>Card in hand</option>
+			<option>Card name</option>
+			<option>Queue</option>
+			<option>Player</option>
+		</datalist>
+		<datalist id="targs">
+			<option>All targets</option>
+			<option>+</option>
+			<option>-</option>
+			<option>Owner</option>
+			<option>Opponent</option>
+		</datalist>
+		<div class="big">
+			<div class="header"><b>Flavor text</b></div>
+			<textarea id="flav" cols="30" rows="3"></textarea>
+		</div>
+		<div id="bot_buttons" class="big">
+			<input type="button" value="Add to list" id="lst_bt" class="bottom">
+			<input type="button" value="Prepare table" id="tbl_pr" class="bottom">
+			<input type="button" value="Save table" id="tbl_s" class="bottom">
+		</div>
+	</div>
+	<script type="text/javascript" src="./client/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./client/js/papaparse.min.js"></script>
+	<script type="text/javascript" src="./client/js/main.js"></script>
+</body>
